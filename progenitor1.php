@@ -13,7 +13,7 @@
     </header>
 
     <main>
-        <h1>Bienvenidos</h1>
+        <h1>Progenitores</h1>
     </main>
     
     <footer>
