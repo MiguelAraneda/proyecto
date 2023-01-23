@@ -9,12 +9,12 @@
 <body>
     <footer class="footer">
         <section class="pie">
-            <img src="img/edukte 1.png" alt="" width="400px" height="150px">
+            <img src="img/edukte 1.png" alt="" width="300px" height="75px">
         </section>
         <section class="pie">
             <p>Todos los Derechos Reservados Edukte</p>
         </section>
-        <section class="pie">
+        <section class="pie3">
             <p>Dirección: Los Corrales 103, El Principal, Pirque</p>
             <p>Telefono de Contacto +56 9 54210980</p>
             <p>Email contacto@edukte.cl</p>

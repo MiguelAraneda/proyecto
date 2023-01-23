@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <?php include "parciales/menu.php" ?>
+<header>
+        <div class="cabecera" >
+            <img src="img/Cabecera pagina liceo.jpg" alt="" width="1160px" height="100px">
+        </div>
     </header>
-
+<br><br>
     <main>
-        <h1>Bienvenidos</h1>
+    <?php include "parciales/login.php" ?>
     </main>
     
+    <br><br>
     <footer>
         <?php include "parciales/footer.php" ?>
     </footer>

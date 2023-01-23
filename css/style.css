@@ -102,3 +102,66 @@ h1{
      border: none;
      margin-top: 1rem;
   }
+
+  /*ESTILO DEL LOGIN*/
+  .input{
+    outline: none;
+    padding: 20px;
+    display: block;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid rgb(145, 143, 143);
+    margin: 20px auto;
+}
+.boton{
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background: #0d10ec;
+    width: 340px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.boton:hover{
+    background-color: rgb(238, 255, 3);
+    color: black;
+}
+span{
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.sombra{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(194,188,194,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(194,188,194,1);
+    box-shadow: 10px 10px 5px 0px rgba(194,188,194,1);
+    background-color: var(--primary);
+}
+
+.contenedor-login{
+    padding: 2.5rem;
+    background-color: var(--gris);
+    color: var(--primary);
+    font-weight: bold;
+    border-radius: 1rem;
+    width: min(35rem, 100%);
+    text-align: center;
+ }
+
+ .pie3 p{
+    text-align: left;
+ }
+
+ .colegio{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    column-gap: 20px;
+    padding: 3rem;
+    max-width: 1480px;
+    margin: 0 auto;
+ } 
