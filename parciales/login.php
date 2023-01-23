@@ -1,26 +1,26 @@
-<?php 
+<!-- <?php 
 
     session_start();
 
     require_once "conexion.php"; #ARCHIVO DE CONEXION CON LA BASE DE DATOS
 
-    if(!empty($_POST['email']) && !empty($_POST['password'])){
-        $records = $conn->prepare('SELECT id, email, password FROM usuarios WHERE email=:email');
-        $records->bindParam(':email', $_POST['email']);
+    if(!empty($_POST['usuario']) && !empty($_POST['password'])){
+        $records = $conn->prepare('SELECT id_usuarios, usuario, password FROM usuarios WHERE usuario=:usuario');
+        $records->bindParam(':usuario', $_POST['usuario']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
         $message = '';
         if(count($results) > 0 && password_verify($_POST['password'], $results['password'])){
-            $_SESSION['user_id'] = $results['id'];
-            header('Location: /login');
+            $_SESSION['user_id'] = $results['id_usuarios'];
+            header('Location: /proyecto/index.php');
         }
         else
         {
-            $message = "Email o Contraseña incorrectos";
+            $message = "Usuario o Contraseña incorrectos";
         }
     }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,15 +47,15 @@
                 </section> 
 
                 <section class="contenedor-login">
-                    <form action="login.php" method="post">
+                    <form action="index.php" method="post">
 
                         <h3>Ingreso de Usuarios</h3>
 
-                        <input class="input" type="text" name="email" placeholder="Ingrese su Email">
+                        <input class="input" type="text" name="usuario" placeholder="Ingrese su Usuario">
                         <input class="input" type="password" name="password" placeholder="Ingrese su Contraseña">
-                        <input class="boton" type="submit" value="Send">
+                        <input class="boton" type="submit" value="Ingresar">
                         <br>
-                        <a href="registrarse.php">Registrarse</a></span>
+                        <a href="registro.php">Registrarse</a></span>
                     </form>
                 </section>    
             </div>

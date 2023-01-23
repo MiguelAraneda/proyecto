@@ -19,6 +19,7 @@
             <a href="estudiantes.php">Matrícula</a>
             <a href="busqueda.php">Busqueda</a>
             <a href="#">Reportes</a>
+            <a href="registro.php">Registro Usuarios</a>
             <a href="#">Acceso Usuarios</a>
         </nav>
     </div>
