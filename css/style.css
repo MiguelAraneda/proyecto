@@ -1,0 +1,104 @@
+/* PALETA DE COLORES A UTILIZAR EN LA PAGINA */
+:root{
+    --primary: #ffffff;
+    --secundary:#000000;
+    --azul:#000294;
+    --amarillo:#fcd600;
+    --celeste:#00b7ff;
+    --verde:#1eff00;
+    --rojo:#ff0000;
+    --marino:#040d5a;
+    --gris:#9e9e9a;
+
+}
+/* ESTILOS GLOBALES DE LA PAGINA */
+html{
+    font-size: 62.5%;
+}
+p{
+    text-align: center;
+}
+body{
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--primary) 100% );
+}
+.sombra{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(194,188,194,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(194,188,194,1);
+    box-shadow: 10px 10px 5px 0px rgba(194,188,194,1);
+    background-color: var(--primary);
+}
+h1{
+    text-align: center;
+ }
+ 
+/* ESTILO DE LA CABECERA Y EL MENÚ */
+.nav-bg{
+    background-color: var(--marino);
+    
+}
+.menu-principal{
+    display: flex;
+    flex-direction: column;
+}
+.menu-principal a{
+    display: block;
+    text-align: center;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+.menu-principal a:hover{
+    background-color: var(--amarillo);
+    color: var(--secundary);
+}
+.contenedor-menu{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .menu-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.cabecera{
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    height: 100px;
+    padding: 20px;
+}
+
+/* ESTILO DEL FOOTER */
+@media(min-width:768px){ 
+    .footer{
+        display: grid; /*divide en secciones el ancho de la pagina*/
+        grid-template-columns: 1fr 1fr 1fr;/*indica en cuantas secciones dividiremos el ancho de la pagina, en este caso son 3 fracciones iguales*/
+        grid-template-rows: auto;
+        column-gap: 2rem;
+        background-color: var(--marino);
+        align-items: center;
+    }
+    .footer p{
+        color: var(--primary);
+        font-weight: 400;
+    }
+}
+
+/* ESTILO CONTENEDOR */
+.contenedor{
+    max-width: 1480px;
+    margin: 0 auto;
+    background-color: #FFD091;
+  }
+  .contenedor fieldset{
+     border: none;
+     margin-top: 1rem;
+  }
