@@ -1,27 +1,3 @@
-<?php 
-
-    session_start();
-
-    require_once "parciales/conexion.php"; #ARCHIVO DE CONEXION CON LA BASE DE DATOS
-
-    if(!empty($_POST['usuario']) && !empty($_POST['password'])){
-        $records = $conn->prepare('SELECT id_usuarios, usuario, password FROM usuarios WHERE usuario=:usuario');
-        $records->bindParam(':usuario', $_POST['usuario']);
-        $records->execute();
-        $results = $records->fetch(PDO::FETCH_ASSOC);
-
-        $message = '';
-        if(count($results) > 0 && password_verify($_POST['password'], $results['password'])){
-            $_SESSION['user_id'] = $results['id_usuarios'];
-            header('Location: /proyecto/index.php');
-        }
-        else
-        {
-            $message = "Usuario o Contraseña incorrectos";
-        }
-    }
-?>
-   
 <!DOCTYPE html>
 <html lang="en">
 <head>

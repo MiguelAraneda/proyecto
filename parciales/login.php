@@ -1,18 +1,19 @@
-<!-- <?php 
+<?php 
 
     session_start();
 
-    require_once "conexion.php"; #ARCHIVO DE CONEXION CON LA BASE DE DATOS
+    require_once "parciales/conexion.php"; #ARCHIVO DE CONEXION CON LA BASE DE DATOS
 
-    if(!empty($_POST['usuario']) && !empty($_POST['password'])){
-        $records = $conn->prepare('SELECT id_usuarios, usuario, password FROM usuarios WHERE usuario=:usuario');
+    if(!empty($_POST['usuario']) && !empty($_POST['pass'])){
+        $records = $conn->prepare('SELECT id, usuario, pass FROM usuarios WHERE usuario=:usuario');
         $records->bindParam(':usuario', $_POST['usuario']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
         $message = '';
-        if(count($results) > 0 && password_verify($_POST['password'], $results['password'])){
-            $_SESSION['user_id'] = $results['id_usuarios'];
+        #VERIFICA SI ESTA CORRECTO EL USUARIO, LO ALMACENA EN EL ID_USUARIOS Y REDIRIGE AL INICIO
+        if(count($results) > 0 && password_verify($_POST['pass'], $results['pass'])){
+            $_SESSION['user_id'] = $results['id'];
             header('Location: /proyecto/index.php');
         }
         else
@@ -20,7 +21,7 @@
             $message = "Usuario o Contraseña incorrectos";
         }
     }
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +53,7 @@
                         <h3>Ingreso de Usuarios</h3>
 
                         <input class="input" type="text" name="usuario" placeholder="Ingrese su Usuario">
-                        <input class="input" type="password" name="password" placeholder="Ingrese su Contraseña">
+                        <input class="input" type="password" name="pass" placeholder="Ingrese su Contraseña">
                         <input class="boton" type="submit" value="Ingresar">
                         <br>
                         <a href="registro.php">Registrarse</a></span>

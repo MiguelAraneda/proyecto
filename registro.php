@@ -5,12 +5,12 @@
 
     $message = '';
 
-    if(!empty($_POST['usuario']) && !empty($_POST['password'])){
-        $sql = "INSERT INTO usuarios(usuario, password) VALUES(:usuario, :password)";
+    if(!empty($_POST['usuario']) && !empty($_POST['pass'])){
+        $sql = "INSERT INTO usuarios(usuario, pass) VALUES(:usuario, :pass)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':usuario', $_POST['usuario']);
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $stmt->bindParam(':password', $password);
+        $password = password_hash($_POST['pass'], PASSWORD_BCRYPT);
+        $stmt->bindParam(':pass', $password);
 
         if($stmt->execute()){
             $message = "Usuario creado correctamente";
@@ -56,7 +56,7 @@
                 <h1>Registro de Usuarios</h1> 
 
                     <input class="input" type="text" name="usuario" placeholder="Ingrese su Usuario">
-                    <input class="input" type="password" name="password" placeholder="Ingrese su Contraseña">
+                    <input class="input" type="password" name="pass" placeholder="Ingrese su Contraseña">
                         <input class="boton" type="submit" value="Send">
 
                     <br><br>
@@ -68,12 +68,8 @@
 
         
     <!-- <h1>Registro de Usuarios</h1>
-    <span>or <a href="login.php">Ingresar Usuario</a></span>
-
-    <form action="registrarse.php" method="post">
-        
-        <input class="input" type="password" name="confirm_password" placeholder="Reingresa tú Contraseña">
-    </form> -->
+           
+        <input class="input" type="password" name="confirm_password" placeholder="Reingresa tú Contraseña"> -->
    
 </body>
 </html>
