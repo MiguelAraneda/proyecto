@@ -97,14 +97,14 @@ h1{
     max-width: 1480px;
     margin: 0 auto;
     background-color: #FFD091;
-  }
-  .contenedor fieldset{
+}
+.contenedor fieldset{
      border: none;
      margin-top: 1rem;
-  }
+}
 
-  /*ESTILO DEL LOGIN*/
-  .input{
+/*ESTILO DEL LOGIN*/
+.input{
     outline: none;
     padding: 20px;
     display: block;
@@ -165,3 +165,62 @@ span{
     max-width: 1480px;
     margin: 0 auto;
  } 
+
+.formulario{
+    margin-bottom: 1rem;
+    background-color: #FFD091;
+}   
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--secundary);
+
+}
+
+.formulario label{
+    color: var(--secundary);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    margin-left: 1rem;
+}
+
+.formulario input{
+    margin-left: 1rem;
+    border: none;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.formulario-estudiante{
+    margin-bottom: 1rem;
+}   
+
+.formulario-estudiante legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--secundary);
+
+}
+
+.formulario-estudiante label{
+    color: var(--secundary);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    margin-left: 1rem;
+}
+.formulario-estudiante input{
+    margin-left: 1rem;
+    border: none;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+
+

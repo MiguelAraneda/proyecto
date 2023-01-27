@@ -5,12 +5,12 @@
 
     $message = '';
 
-    if(!empty($_POST['usuario']) && !empty($_POST['pass'])){
-        $sql = "INSERT INTO usuarios(usuario, pass) VALUES(:usuario, :pass)";
+    if(!empty($_POST['email']) && !empty($_POST['password'])){
+        $sql = "INSERT INTO usuarios(email, password) VALUES(:email, :password)";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':usuario', $_POST['usuario']);
-        $password = password_hash($_POST['pass'], PASSWORD_BCRYPT);
-        $stmt->bindParam(':pass', $password);
+        $stmt->bindParam(':email', $_POST['email']);
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $stmt->bindParam(':password', $password);
 
         if($stmt->execute()){
             $message = "Usuario creado correctamente";
@@ -45,31 +45,23 @@
     <?php if(!empty($message)): ?>
         <p><?= $message ?></p>
         <?php endif; ?>
-        <div class="contenedor colegio  sombra">
-            <section>
-                <img src="img/portada grande.jpg" alt="" width="690rem" height="450rem">
-            </section> 
+    <div class="contenedor colegio  sombra">
+        <section>
+            <img src="img/portada grande.jpg" alt="" width="690rem" height="450rem">
+        </section> 
 
-            <section class="contenedor-login">
-                <form action="registro.php" method="post">
+        <section class="contenedor-login">
+            <form action="registro.php" method="post">
 
                 <h1>Registro de Usuarios</h1> 
-
-                    <input class="input" type="text" name="usuario" placeholder="Ingrese su Usuario">
-                    <input class="input" type="password" name="pass" placeholder="Ingrese su Contraseña">
-                        <input class="boton" type="submit" value="Send">
-
-                    <br><br>
-                    <a href="index.php">Ingresar Usuario</a></span>
-                </form>
-            </section>
-        </div>
-        
-
-        
-    <!-- <h1>Registro de Usuarios</h1>
-           
-        <input class="input" type="password" name="confirm_password" placeholder="Reingresa tú Contraseña"> -->
-   
+                <input class="input" type="text" name="email" placeholder="Ingrese su Email">
+                <input class="input" type="password" name="password" placeholder="Ingrese su Contraseña">
+                <input class="input" type="password" name="confirm_password" placeholder="Reingresa tú Contraseña">
+                <input class="boton" type="submit" value="Send">
+                <br><br>
+                <a href="index.php">Ingresar Usuario</a></span>
+            </form>
+        </section>
+    </div>
 </body>
 </html>

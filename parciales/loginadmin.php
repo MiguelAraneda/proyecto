@@ -52,7 +52,7 @@
                 <input class="input" type="password" name="password" placeholder="Ingrese su Contraseña">
                 <input class="boton" type="submit" value="Ingresar">
             <br>
-                <a href="administrador.php">Administrador</a></span>
+                <a href="registro.php">Registrar Usuario</a></span>
             </form>
         </section>    
     </div>
